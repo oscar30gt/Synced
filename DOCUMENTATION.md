@@ -1,5 +1,5 @@
 # *Synced* Documentation - [Version 1.0.0](CHANGELOG.md/#version-100-december-6-2023)
-December 6, 2023
+December 16, 2023
 
 ## Contents
 - [Getting Started](#getting-started)

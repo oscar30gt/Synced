@@ -1,7 +1,7 @@
 # *Synced* Package License
 
 **Version 1.0.0**  
-**December 6, 2023**
+**December 16, 2023**
 
 Copyright (c) 2023 Utopia Games
 
