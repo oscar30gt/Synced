@@ -33,7 +33,8 @@ Open the *Synced* settings window. For achieve this, go `Window > Synced > Setti
 Click the *Manage Languages* button to add your first language. 
 In the window that opens, you'll find several fields, but the only mandatory one is the **Language Code** text field. Input the ISO code for the desired language (la-RE for language-REGION). Just ensure the language exists and hasn't been implemented already.
 The **Override Language** toggle allows you to base a new language on an existing one, copying its fields. For instance, if en-US already exists and you want to add en-UK, it's a good idea to use the same translations and modify only what's necessary.
-> Note: The override option is only effective during language creation and won't impact future changes.
+> [!NOTE]
+> The override option is only effective during language creation and won't impact future changes.
 
 ![](Images/2.png)\
 *Languages Window.*
@@ -48,7 +49,12 @@ To begin adding translations, populate the text translations list by creating li
 
 #### Edit
 Each text you added will appear as a field, accompanied by an additional one for the key. The key serves as a reference for the entire line of translations, and you can assign any value you prefer. Consider using a hierarchical key format for better organization.
-> Note: each key has to be unique, so it mustn't be more than one translation with the same key (in each list)
+
+> [!CAUTION]
+> Each key has to be unique, so it mustn't be more than one translation with the same key (in each list)
+
+> [!TIP]
+> Not every text has to be a translation. Imagine writing addressables paths for various textures of a poster which contains texts you want to translate.
 
 #### Special Characters
 Next, input the translations for the languages you have implemented. If you need it, you can use placeholders. Placeholders allow you to translate texts with variable information, for example, a health message or the durability of a weapon. Placeholders are declared with `%p` in your translations, for example: "your current health is %p". Learn how to use placeholders by using the [GetText()](#gettext--getaudio) method.
@@ -66,7 +72,7 @@ Once you have added the desired languages and translations, navigate back to the
 ![](Images/5.png)\
 *First launch settings.*
 
-> Note: In cases where a matching language is not found, the app will set default language.
+> In cases where a matching language is not found, the app will set default language.
 
 
 ## Components
@@ -76,7 +82,8 @@ Once you have added the desired languages and translations, navigate back to the
 
 #### Overview
 This component should be added to a GameObject containing either a `Text` or `TextMeshPro` component.
-> Note: The package is optimized for TMPro, Unity's cutting-edge text display system, for the best experience. If you've installed TMPro, using the component with the Text component is not supported. This serves as an alternative for users who choose not to use TMPro in their projects but isn't the primary focus of the package.
+> [!WARNING]
+> The package is optimized for TMPro, Unity's cutting-edge text display system, for the best experience. If you've installed TMPro, using the component with the Text component is not supported. This serves as an alternative for users who choose not to use TMPro in their projects but isn't the primary focus of the package.
 
 #### Features & Usage
 Simply input the desired key into the `Key` field. The package will automatically display the corresponding text using the attached `Text` / `TMPro` component. These are the features you may consider:
@@ -91,7 +98,8 @@ Simply input the desired key into the `Key` field. The package will automaticall
 
 #### Overview
 As with `MultiLanguageText`, this component has to be attached to a GameObject with a `AudioSource`. By the same way, you have to input the key to make the script automatically set the audio clip on the source.
-> Note: Here, the keys you need to use are the ones which refers to audio clips in the audio translations list.
+> [!NOTE]
+> Here, the keys you need to use are the ones which refers to audio clips in the audio translations list.
 
 #### Features & Usage
 - Note there is a new option named `Play On Change`. This property, when marked as true, will play the sound every time the clip is changed.
@@ -137,14 +145,16 @@ You just have to attach it to a UI GameObject which is interactable (is raycast 
 ### TextMeshPro
 
 [TextMeshPro](https://docs.unity3d.com/Manual/com.unity.textmeshpro.html) stands out as the recommended text solution for *Synced* due to its tailored functionalities. However, for those who prefer an alternative, *Synced* also supports the legacy `Text` component, though with some sacrificed features.
-> Note: Once the `TextMeshPro` package is installed, the use of legacy texts for translatable texts is no longer supported.
+> [!IMPORTANT]
+> Once the `TextMeshPro` package is installed, the use of legacy texts for translatable texts is no longer supported.
 
 ### Addressables
 
 [Addressables](https://docs.unity3d.com/Manual/com.unity.addressables.html) significantly boosts data loading speed. By default, translations data is loaded using `Resources`, which might lead to longer project opening times when handling substantial data, especially with audio clips. While I strive to avoid limiting developers in their package choices, I highly recommend choosing Addressables over Resources.
 Additionally, ensure that you have initialized Addressables by creating at least one addressable group. If your project was already utilizing Addressables, this step may have been completed. However, if you are installing Addressables specifically for *Synced*, be sure to perform this initialization step. This can be achievend marking any asset as addressable (you can unmark it later).
 
-> Note: In the editor, data is loaded directly from object references in the Assets folder, making the difference between the two solutions unnoticeable. Resources and Addressables are employed only in the built version.
+> [!NOTE] 
+> In the editor, data is loaded directly from object references in the Assets folder, making the difference between the two solutions unnoticeable. Resources and Addressables are employed only in the built version.
 
 
 
@@ -153,7 +163,7 @@ Additionally, ensure that you have initialized Addressables by creating at least
 ### Introduction
 *Synced* provides a multitude of tools for improving your language experience within your application. To achieve the best results, use these tools in conjunction with its extensive coding library. This combination allows for a heightened level of personalization in your project.
 
-> **Important!!**\
+> [!IMPORTANT]
 > When interacting with *Synced*'s language library, ensure you import the `Synced` namespace. All methods, properties and events belong to the `LanguageManager` static class, so be certain to reference it.
 
 ```csharp
@@ -182,7 +192,7 @@ public class SomeBehavior : MonoBehaviour
 |:----------:|:----------:|:-----------:|
 | `OnApplicationLanguageChanged` | `LanguageChangedEvent` | Triggered when the application language is changed. |
 | `OnRefresh` | `RefreshEvent` | Triggered when calling `Refresh()` manually or when the language changes. |
-> Note: Both events are available in language groups. Note that `OnApplicationLanguageChanged` is named `OnGroupLanguageChanged` within language groups.
+> Both events are available in language groups. Note that `OnApplicationLanguageChanged` is named `OnGroupLanguageChanged` within language groups.
 
 ### Methods
 #### SetApplicationLanguage
@@ -195,7 +205,7 @@ LanguageManager.SetApplicationLanguage(someLanguage);
 ```
 *This method returns no value.*
 
-> Note: The method is also available within language groups, where it is called `SetGroupLanguage()`.
+> The method is also available within language groups, where it is called `SetGroupLanguage()`.
 
 #### ResetToDefaultLanguage
 
@@ -217,7 +227,7 @@ LanguageManager.RefreshTexts();
 *This method requires no arguments.*\
 *This method returns no value.*
 
-> Note: The method is also available within language groups and only refreshes the text which the group handles.
+> The method is also available within language groups and only refreshes the text which the group handles.
 
 #### GetDeviceLanguage
 
