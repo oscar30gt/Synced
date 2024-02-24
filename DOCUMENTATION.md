@@ -279,10 +279,10 @@ LanguageSupport supportDetails = LanguageManager.GetLanguageSupport(someLanguage
 
 ## Ending
 ### The Future Of *Synced*
-Stay tuned for future updates and enhancements. I have planned some more updates to improve even more. After all, the asset is for you, so if you have any suggestion of implementation you'd like to be in synced, let me know.
+Stay tuned for future updates and enhancements. I have planned some more updates to improve even more. After all, this tool is for you, so if you have any suggestion of implementation you'd like to be in synced, let me know.
 
 ### Reporting Issues
-Due to the fact that this is the first version of the asset, it could still present some bugs. If so, do not hesitate to report them [here](mailto:oscar30gt@gmail.com). I'm always trying to improve my projects and your help really helps me and makes you have a more fluent experience when working with Unity.
+Due to the fact that this is the first version of the package, it could still present some bugs. If so, do not hesitate to report them [here](mailto:oscar30gt@gmail.com). I'm always trying to improve my projects and your help really helps me and makes you have a more fluent experience when working with Unity.
 
 ### Thank You!
 Finally, I sincerely appreciate your consideration of *Synced* for your language management needs. Hope it helps you or your team in your projects! :D
