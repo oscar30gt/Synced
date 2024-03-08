@@ -1,10 +1,10 @@
 ![](Images/header.png)
 
-# *Synced* - Unity Language Manager Asset
+# *Synced* - Language Manager Asset
 [Version 1.0.0](CHANGELOG.md/#version-100-december-6-2023) - December 16, 2023
 ## Overview
 
-*Synced* is a robust and powerful Unity asset designed to enhance language management in your Unity projects. Whether you're developing a game or application, *Synced* provides an efficient and user-friendly solution for handling multiple languages. Empower your project with seamless global readiness.
+*Synced* is a robust and powerful tool designed to enhance language management in your Unity projects. Whether you're developing a game or application, *Synced* provides an efficient and user-friendly solution for handling multiple languages. Empower your project with seamless global readiness.
 
 ## Features
 - **Versatile:** Enjoy flexibility by using translation keys to reference various sources, with a primary focus on texts and audio. Adapt *Synced* to different content types within your project.
