@@ -140,12 +140,19 @@ You just have to attach it to a UI GameObject which is interactable (is raycast 
 
 ## Compatibility
 
+> [!IMPORTANT]
+> Installing packages can produce some errors that may cause Synced not to recognise these packages. Follow this steps to solve it:
+> 1. Press `Assets` in the toolbar and click `reimport all`. This will solve the issue the 90% of the times.
+> 2. If the problem persists, do the following:
+> *Synced* uses compilation symbols to let the components know how to behave. If by any reason they haven't been added automatically, you can write them by yourself. The compilation symbols you want to add are `TMPRO_PACKAGE_EXISTS` and `ADDRESSABLES_PACKAGE_EXISTS`. Make sure you add just the ones which matches with you current installed packages to avoid major issues.
+
+
 *Synced* is crafted to seamlessly integrate with some of Unity's most popular solutions, ensuring a rich and flexible user experience. Keep in mind that the installation or removal of packages forces *Synced* to adapt itself to being able to work with the installed ones. This could produce compilation errors, but nothing to worry about. Typically, recompiling the scripts resolves these issues. If the problem persists, consider restarting the Unity editor.
 
 ### TextMeshPro
 
 [TextMeshPro](https://docs.unity3d.com/Manual/com.unity.textmeshpro.html) stands out as the recommended text solution for *Synced* due to its tailored functionalities. However, for those who prefer an alternative, *Synced* also supports the legacy `Text` component, though with some sacrificed features.
-> [!IMPORTANT]
+> [!NOTE]
 > Once the `TextMeshPro` package is installed, the use of legacy texts for translatable texts is no longer supported.
 
 ### Addressables
